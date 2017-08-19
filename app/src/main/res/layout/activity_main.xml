@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/btn_menu_more"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:drawable/list_selector_background"
+                    android:src="@android:drawable/ic_menu_more" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:text="@string/app_name"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.mojtaba_shafaei.android.ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tb_A_text="دکمه A"
+            app:tb_B_text="دکمه B"
+            app:tb_default_button="A"
+            app:tb_isMandatory="false"
+            app:tb_layout_direction="rtl"
+            app:tb_title="عنوان"
+            app:tb_titleTextColor="@color/colorPrimaryDark"
+            app:tb_titleTextSize="16sp" />
+
+        <com.mojtaba_shafaei.android.ToggleButton
+            android:id="@+id/tb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:tb_A_text="'A' Button"
+            app:tb_B_text="'B' Button"
+            app:tb_isMandatory="true"
+            app:tb_layout_direction="ltr"
+            app:tb_title="Title..."
+            app:tb_titleTextSize="@dimen/titleTextSize" />
+    </LinearLayout>
+</LinearLayout>

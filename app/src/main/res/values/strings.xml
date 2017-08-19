@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android Toggle Button Example</string>
+    <string name="errorText">Error text is here!</string>
+</resources>
