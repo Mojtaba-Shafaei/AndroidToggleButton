@@ -10,6 +10,7 @@ import android.support.annotation.DimenRes;
 import android.support.annotation.Dimension;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -27,9 +28,6 @@ public class ToggleButton extends RelativeLayout {
     private TextView title, error;
     private android.widget.ToggleButton toggleButtonA, toggleButtonB;
     private boolean isMandatory = false;
-    /////////////////////////////////////////////////////////
-    public static final int LAYOUT_DIRECTION_LTR = 0;
-    public static final int LAYOUT_DIRECTION_RTL = 1;
 
     /////////////////////////////////////////////////////////
     public ToggleButton(Context context) {
@@ -78,14 +76,17 @@ public class ToggleButton extends RelativeLayout {
         View root;
 
         if (attrs == null) {
-            root = inflate(context, com.mojtaba_shafaei.android.R.layout.ltr, this);
+            root = inflate(context, R.layout.inherited, this);
 
         } else {
             a = context.getTheme().obtainStyledAttributes(
                     attrs,
                     com.mojtaba_shafaei.android.R.styleable.ToggleButton,
                     0, 0);
-            root = inflate(context, a.getInt(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_layout_direction, LAYOUT_DIRECTION_LTR) == LAYOUT_DIRECTION_LTR ? com.mojtaba_shafaei.android.R.layout.ltr : com.mojtaba_shafaei.android.R.layout.rtl, this);
+
+            final int ll = a.getInt(R.styleable.ToggleButton_tb_layoutDirection, ViewCompat.LAYOUT_DIRECTION_INHERIT);
+            root = inflate(context, R.layout.inherited, this);
+            ViewCompat.setLayoutDirection(root, ll);
         }
 
 

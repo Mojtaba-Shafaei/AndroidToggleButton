@@ -2,8 +2,10 @@
 
 A customizable Android library to display Toggle Button.
 
-## **Version**
-1.0.0
+Customizable parameters:
+   - Optional/Mandatory
+   - ltr/rtl or inherit layout direction
+
 ### **Requirements**
 
 - MIN-SDK Version = 15
@@ -38,7 +40,7 @@ A customizable Android library to display Toggle Button.
     app:tb_A_text="'A' Button"
     app:tb_B_text="'B' Button"
     app:tb_isMandatory="true"
-    app:tb_layout_direction="ltr"
+    app:tb_layoutDirection="ltr"
     app:tb_title="Title..."
     app:tb_titleTextSize="@dimen/titleTextSize" />
 ```
@@ -49,8 +51,6 @@ A customizable Android library to display Toggle Button.
     toggleButton.setError(R.string.errorText);
 
 ```
-<!-- ## **Sample App**
-[Download sample app from my drive](https://drive.google.com/file/d/0B7U-LJJvftlSZC1qRDcxeVV3N3M/view?usp=sharing) -->
 
 ## **Developer**
 
