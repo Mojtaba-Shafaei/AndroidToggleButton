@@ -3,6 +3,7 @@ package com.mojtaba_shafaei.android.android_toggle_button_example;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -28,5 +29,21 @@ public class MainActivity extends AppCompatActivity {
         toggleButton.setTitleTypeface(typeface);
         toggleButton.setErrorEnabled(true);
         toggleButton.setError(R.string.errorText);
+
+        final View root = findViewById(R.id.root);
+
+        findViewById(R.id.btnRtl).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewCompat.setLayoutDirection(root, ViewCompat.LAYOUT_DIRECTION_RTL);
+            }
+        });
+
+        findViewById(R.id.btnLtr).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewCompat.setLayoutDirection(root, ViewCompat.LAYOUT_DIRECTION_LTR);
+            }
+        });
     }
 }

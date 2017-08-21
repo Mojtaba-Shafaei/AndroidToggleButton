@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -56,7 +58,7 @@
             app:tb_B_text="دکمه B"
             app:tb_default_button="A"
             app:tb_isMandatory="false"
-            app:tb_layout_direction="rtl"
+            app:tb_layoutDirection="rtl"
             app:tb_title="عنوان"
             app:tb_titleTextColor="@color/colorPrimaryDark"
             app:tb_titleTextSize="16sp" />
@@ -69,8 +71,38 @@
             app:tb_A_text="'A' Button"
             app:tb_B_text="'B' Button"
             app:tb_isMandatory="true"
-            app:tb_layout_direction="ltr"
+            app:tb_layoutDirection="ltr"
             app:tb_title="Title..."
             app:tb_titleTextSize="@dimen/titleTextSize" />
+
+        <com.mojtaba_shafaei.android.ToggleButton
+            android:id="@+id/tb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:tb_A_text="'A' Button"
+            app:tb_B_text="'B' Button"
+            app:tb_isMandatory="true"
+            app:tb_layoutDirection="inherit"
+            app:tb_title="Title..."
+            app:tb_titleTextSize="@dimen/titleTextSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRtl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RTL Layout" />
+
+            <Button
+                android:id="@+id/btnLtr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LTR Layout" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
