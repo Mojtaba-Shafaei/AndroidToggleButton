@@ -51,7 +51,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <com.mojtaba_shafaei.android.ToggleButton
+        <com.mojtaba_shafaei.android.toggleButton.ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:tb_A_text="دکمه A"
@@ -63,7 +63,7 @@
             app:tb_titleTextColor="@color/colorPrimaryDark"
             app:tb_titleTextSize="16sp" />
 
-        <com.mojtaba_shafaei.android.ToggleButton
+        <com.mojtaba_shafaei.android.toggleButton.ToggleButton
             android:id="@+id/tb3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
             app:tb_title="Title..."
             app:tb_titleTextSize="@dimen/titleTextSize" />
 
-        <com.mojtaba_shafaei.android.ToggleButton
+        <com.mojtaba_shafaei.android.toggleButton.ToggleButton
             android:id="@+id/tb4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

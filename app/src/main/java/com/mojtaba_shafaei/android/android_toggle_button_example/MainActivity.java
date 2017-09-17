@@ -7,7 +7,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.mojtaba_shafaei.android.ToggleButton;
+import com.mojtaba_shafaei.android.toggleButton.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 

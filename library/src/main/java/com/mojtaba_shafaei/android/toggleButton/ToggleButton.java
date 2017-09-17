@@ -1,4 +1,4 @@
-package com.mojtaba_shafaei.android;
+package com.mojtaba_shafaei.android.toggleButton;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -17,10 +17,6 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-/**
- * Created by mojtaba on 10/3/16.
- */
 
 public class ToggleButton extends RelativeLayout {
     private final String TAG = "MyToggleButton";
@@ -81,7 +77,7 @@ public class ToggleButton extends RelativeLayout {
         } else {
             a = context.getTheme().obtainStyledAttributes(
                     attrs,
-                    com.mojtaba_shafaei.android.R.styleable.ToggleButton,
+                    R.styleable.ToggleButton,
                     0, 0);
 
             final int ll = a.getInt(R.styleable.ToggleButton_tb_layoutDirection, ViewCompat.LAYOUT_DIRECTION_INHERIT);
@@ -92,11 +88,11 @@ public class ToggleButton extends RelativeLayout {
 
         try {
 
-            toggleButtonA = root.findViewById(com.mojtaba_shafaei.android.R.id.toggleButtonA);
-            toggleButtonB = root.findViewById(com.mojtaba_shafaei.android.R.id.toggleButtonB);
+            toggleButtonA = root.findViewById(R.id.toggleButtonA);
+            toggleButtonB = root.findViewById(R.id.toggleButtonB);
 
-            title = findViewById(com.mojtaba_shafaei.android.R.id.title);
-            error = findViewById(com.mojtaba_shafaei.android.R.id.error);
+            title = findViewById(R.id.title);
+            error = findViewById(R.id.error);
 
             toggleButtonA.setChecked(false);
             toggleButtonB.setChecked(false);
@@ -139,8 +135,8 @@ public class ToggleButton extends RelativeLayout {
 
 
             } else {
-                isMandatory = a.getBoolean(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_isMandatory, false);
-                final int defaultButton = a.getInteger(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_default_button, -1);
+                isMandatory = a.getBoolean(R.styleable.ToggleButton_tb_isMandatory, false);
+                final int defaultButton = a.getInteger(R.styleable.ToggleButton_tb_default_button, -1);
                 switch (defaultButton) {
                     case 0:
                         toggleButtonB.setChecked(true);
@@ -155,27 +151,27 @@ public class ToggleButton extends RelativeLayout {
                         toggleButtonA.setChecked(false);
                 }
 
-                final String t = a.getString(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_title);
+                final String t = a.getString(R.styleable.ToggleButton_tb_title);
                 if (isMandatory) {
                     this.title.setText(t + " *");
                 } else {
                     this.title.setText(t);
                 }
 
-                final int titleTextSize = a.getDimensionPixelSize(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_titleTextSize, -1);
+                final int titleTextSize = a.getDimensionPixelSize(R.styleable.ToggleButton_tb_titleTextSize, -1);
                 if (titleTextSize != -1) {
                     title.setTextSize(TypedValue.COMPLEX_UNIT_PX, titleTextSize);
                 }
 
-                final int titleColor = a.getColor(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_titleTextColor, ContextCompat.getColor(context, android.R.color.primary_text_light));
+                final int titleColor = a.getColor(R.styleable.ToggleButton_tb_titleTextColor, ContextCompat.getColor(context, android.R.color.primary_text_light));
                 title.setTextColor(titleColor);
 
-                String tba = a.getString(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_A_text);
+                String tba = a.getString(R.styleable.ToggleButton_tb_A_text);
                 this.toggleButtonA.setTextOff(tba);
                 this.toggleButtonA.setTextOn(tba);
                 this.toggleButtonA.setText(tba);
 
-                String tbb = a.getString(com.mojtaba_shafaei.android.R.styleable.ToggleButton_tb_B_text);
+                String tbb = a.getString(R.styleable.ToggleButton_tb_B_text);
                 this.toggleButtonB.setTextOff(tbb);
                 this.toggleButtonB.setTextOn(tbb);
                 this.toggleButtonB.setText(tbb);
