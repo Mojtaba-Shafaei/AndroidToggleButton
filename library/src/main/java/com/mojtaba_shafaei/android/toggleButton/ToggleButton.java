@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DimenRes;
 import android.support.annotation.Dimension;
+import android.support.annotation.IntDef;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
@@ -18,12 +19,23 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 public class ToggleButton extends LinearLayoutCompat {
 	 private final String TAG = "MyToggleButton";
 	 private Integer value = null;
 	 private TextView title, error;
 	 private android.widget.ToggleButton toggleButtonA, toggleButtonB;
 	 private boolean isMandatory = false;
+
+	 private OnCheckedChangeListener checkedChangeListener = new OnCheckedChangeListener() {
+			@Override
+			public void onChecked(int button) {
+				 //this is dummy
+			}
+	 };
 
 	 /////////////////////////////////////////////////////////
 	 public ToggleButton(Context context) {
@@ -99,9 +111,11 @@ public class ToggleButton extends LinearLayoutCompat {
 										 value = 1;
 									} else{
 										 value = null;
+										 checkedChangeListener.onChecked(ButtonsEnum.BUTTON_NON);
 									}
 							 } else{
 									value = 1;
+									checkedChangeListener.onChecked(ButtonsEnum.BUTTON_A);
 							 }
 							 refreshButtons();
 						}
@@ -115,9 +129,11 @@ public class ToggleButton extends LinearLayoutCompat {
 										 value = 0;
 									} else{
 										 value = null;
+										 checkedChangeListener.onChecked(ButtonsEnum.BUTTON_NON);
 									}
 							 } else{
 									value = 0;
+									checkedChangeListener.onChecked(ButtonsEnum.BUTTON_B);
 							 }
 							 refreshButtons();
 						}
@@ -126,7 +142,7 @@ public class ToggleButton extends LinearLayoutCompat {
 				 if(attrs == null){
 						isMandatory = true;
 						toggleButtonA.setChecked(true);
-
+						checkedChangeListener.onChecked(ButtonsEnum.BUTTON_A);
 
 				 } else{
 						isMandatory = a.getBoolean(R.styleable.ToggleButton_tb_isMandatory, false);
@@ -169,6 +185,7 @@ public class ToggleButton extends LinearLayoutCompat {
 						toggleButtonA.requestLayout();
 						toggleButtonB.requestLayout();
 				 }
+
 			} catch(Exception e) {
 				 Log.e(TAG, "initWithAttrs: " + e);
 			} finally {
@@ -237,5 +254,22 @@ public class ToggleButton extends LinearLayoutCompat {
 	 public void setValue(Integer i) {
 			this.value = i;
 			refreshButtons();
+	 }
+
+	 public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
+			this.checkedChangeListener = listener;
+	 }
+
+	 @Retention(RetentionPolicy.SOURCE)
+	 @Documented
+	 @IntDef({ButtonsEnum.BUTTON_A, ButtonsEnum.BUTTON_B, ButtonsEnum.BUTTON_NON})
+	 public @interface ButtonsEnum {
+			int BUTTON_A = 1;
+			int BUTTON_B = 0;
+			int BUTTON_NON = -1;
+	 }
+
+	 public interface OnCheckedChangeListener {
+			void onChecked(@ButtonsEnum int button);
 	 }
 }
