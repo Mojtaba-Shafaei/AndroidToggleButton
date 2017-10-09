@@ -11,6 +11,7 @@ import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -146,9 +147,9 @@ public class ToggleButton extends LinearLayoutCompat {
 
 						final String t = a.getString(R.styleable.ToggleButton_tb_title);
 						if(isMandatory){
-							 this.title.setText(t + " *");
+							 setTitle(t + " *");
 						} else{
-							 this.title.setText(t);
+							 setTitle(t);
 						}
 
 						final int titleTextSize = a.getDimensionPixelSize(R.styleable.ToggleButton_tb_titleTextSize, -1);
@@ -185,11 +186,16 @@ public class ToggleButton extends LinearLayoutCompat {
 	 }
 
 	 public void setTitle(String title) {
+			if(TextUtils.isEmpty(title)){
+				 this.title.setVisibility(GONE);
+			} else{
+				 this.title.setVisibility(VISIBLE);
+			}
 			this.title.setText(title);
 	 }
 
 	 public void setTitle(@StringRes int titleResId) {
-			this.title.setText(titleResId);
+			setTitle(getContext().getString(titleResId));
 	 }
 
 	 /**

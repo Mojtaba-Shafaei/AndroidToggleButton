@@ -58,7 +58,7 @@
             app:tb_B_text="دکمه B"
             app:tb_default_button="A"
             app:tb_isMandatory="false"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="start"
             app:tb_layoutDirection="rtl"
             app:tb_title="عنوان"
             app:tb_titleTextColor="@color/colorPrimaryDark"
@@ -71,9 +71,7 @@
             android:layout_marginTop="40dp"
             app:tb_A_text="'A' Button"
             app:tb_B_text="'B' Button"
-            app:tb_isMandatory="true"
             app:tb_layoutDirection="ltr"
-            app:tb_title="Title..."
             app:tb_titleTextSize="@dimen/titleTextSize" />
 
         <com.mojtaba_shafaei.android.toggleButton.ToggleButton
