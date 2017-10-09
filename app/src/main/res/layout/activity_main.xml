@@ -58,6 +58,7 @@
             app:tb_B_text="دکمه B"
             app:tb_default_button="A"
             app:tb_isMandatory="false"
+            android:layout_gravity="center_horizontal"
             app:tb_layoutDirection="rtl"
             app:tb_title="عنوان"
             app:tb_titleTextColor="@color/colorPrimaryDark"
