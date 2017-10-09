@@ -8,7 +8,7 @@ Customizable parameters:
 
 ### **Requirements**
 
-- MIN-SDK Version = 15
+- MIN-SDK Version = 14
 
 ### **Install**
     allprojects {
