@@ -187,7 +187,12 @@ public class ToggleButton extends LinearLayoutCompat {
 			} else{
 				 this.title.setVisibility(VISIBLE);
 			}
-			this.title.setText(title);
+
+			if(isMandatory){
+				 this.title.setText(title + " *");
+			} else{
+				 this.title.setText(title);
+			}
 	 }
 
 	 public void setTitle(@StringRes int titleResId) {
