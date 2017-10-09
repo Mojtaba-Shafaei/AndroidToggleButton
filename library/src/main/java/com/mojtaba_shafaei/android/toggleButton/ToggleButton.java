@@ -146,11 +146,7 @@ public class ToggleButton extends LinearLayoutCompat {
 						}
 
 						final String t = a.getString(R.styleable.ToggleButton_tb_title);
-						if(isMandatory){
-							 setTitle(t + " *");
-						} else{
-							 setTitle(t);
-						}
+						setTitle(t);
 
 						final int titleTextSize = a.getDimensionPixelSize(R.styleable.ToggleButton_tb_titleTextSize, -1);
 						if(titleTextSize != -1){
