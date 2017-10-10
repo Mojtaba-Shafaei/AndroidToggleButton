@@ -62,7 +62,6 @@
             app:tb_background_B_type="green"
             app:tb_isMandatory="true"
             app:tb_layoutDirection="rtl"
-            app:tb_background_A="@drawable/msg_out"
             app:tb_title="عنوان"
             app:tb_titleTextColor="@color/colorPrimaryDark"
             app:tb_titleTextSize="16sp" />
