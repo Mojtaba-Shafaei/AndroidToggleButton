@@ -52,14 +52,15 @@
         android:padding="16dp">
 
         <com.mojtaba_shafaei.android.toggleButton.ToggleButton
+            android:id="@+id/toggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             app:tb_A_text="دکمه A"
             app:tb_B_text="دکمه B"
-            app:tb_default_button="A"
             app:tb_background_A_type="blue"
             app:tb_background_B_type="green"
+            app:tb_default_button="A"
             app:tb_isMandatory="true"
             app:tb_layoutDirection="rtl"
             app:tb_title="عنوان"
@@ -107,5 +108,12 @@
                 android:layout_height="wrap_content"
                 android:text="LTR Layout" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_test_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test" />
+
     </LinearLayout>
 </LinearLayout>
