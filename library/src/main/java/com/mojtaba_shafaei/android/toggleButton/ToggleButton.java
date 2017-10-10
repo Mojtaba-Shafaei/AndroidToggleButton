@@ -185,17 +185,21 @@ public class ToggleButton extends LinearLayoutCompat {
 						this.toggleButtonB.setTextOn(tbb);
 						this.toggleButtonB.setText(tbb);
 
-						int buttonABackgroundResId = a.getResourceId(R.styleable.ToggleButton_tb_background_A, R.drawable.bg_toggle_selector);
-						setBackgroundA(buttonABackgroundResId);
+						if(a.hasValue(R.styleable.ToggleButton_tb_background_A)){
+							 int buttonABackgroundResId = a.getResourceId(R.styleable.ToggleButton_tb_background_A, R.drawable.bg_toggle_selector);
+							 setBackgroundA(buttonABackgroundResId);
+						} else{
+							 int buttonAbgType = a.getInt(R.styleable.ToggleButton_tb_background_A_type, 1);
+							 setBackgroundAType(buttonAbgType);
+						}
 
-						int buttonBBackgroundResId = a.getResourceId(R.styleable.ToggleButton_tb_background_B, R.drawable.bg_toggle_selector);
-						setBackgroundB(buttonBBackgroundResId);
-
-						int buttonAbgType = a.getInt(R.styleable.ToggleButton_tb_background_A_type, 1);
-						setBackgroundAType(buttonAbgType);
-
-						int buttonBbgType = a.getInt(R.styleable.ToggleButton_tb_background_B_type, 1);
-						setBackgroundBType(buttonBbgType);
+						if(a.hasValue(R.styleable.ToggleButton_tb_background_B)){
+							 int buttonBBackgroundResId = a.getResourceId(R.styleable.ToggleButton_tb_background_B, R.drawable.bg_toggle_selector);
+							 setBackgroundB(buttonBBackgroundResId);
+						} else{
+							 int buttonBbgType = a.getInt(R.styleable.ToggleButton_tb_background_B_type, 1);
+							 setBackgroundBType(buttonBbgType);
+						}
 
 						toggleButtonA.requestLayout();
 						toggleButtonB.requestLayout();
