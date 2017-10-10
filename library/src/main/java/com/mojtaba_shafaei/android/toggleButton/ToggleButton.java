@@ -23,6 +23,9 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import static com.mojtaba_shafaei.android.toggleButton.ToggleButton.ButtonBgEnum.BLUE;
+import static com.mojtaba_shafaei.android.toggleButton.ToggleButton.ButtonBgEnum.GREEN;
+
 public class ToggleButton extends LinearLayoutCompat {
 	 private final String TAG = "MyToggleButton";
 	 private Integer value = null;
@@ -182,6 +185,18 @@ public class ToggleButton extends LinearLayoutCompat {
 						this.toggleButtonB.setTextOn(tbb);
 						this.toggleButtonB.setText(tbb);
 
+						int buttonABackgroundResId = a.getResourceId(R.styleable.ToggleButton_tb_background_A, R.drawable.bg_toggle_selector);
+						setBackgroundA(buttonABackgroundResId);
+
+						int buttonBBackgroundResId = a.getResourceId(R.styleable.ToggleButton_tb_background_B, R.drawable.bg_toggle_selector);
+						setBackgroundB(buttonBBackgroundResId);
+
+						int buttonAbgType = a.getInt(R.styleable.ToggleButton_tb_background_A_type, 1);
+						setBackgroundAType(buttonAbgType);
+
+						int buttonBbgType = a.getInt(R.styleable.ToggleButton_tb_background_B_type, 1);
+						setBackgroundBType(buttonBbgType);
+
 						toggleButtonA.requestLayout();
 						toggleButtonB.requestLayout();
 				 }
@@ -192,6 +207,40 @@ public class ToggleButton extends LinearLayoutCompat {
 				 if(a != null)
 						a.recycle();
 			}
+	 }
+
+	 public void setBackgroundA(int buttonABackgroundResId) {
+			toggleButtonA.setBackgroundResource(buttonABackgroundResId);
+	 }
+
+	 public void setBackgroundB(int buttonABackgroundResId) {
+			toggleButtonB.setBackgroundResource(buttonABackgroundResId);
+	 }
+
+	 public void setBackgroundAType(@ButtonBgEnum int type) {
+			switch(type) {
+				 case BLUE:
+						toggleButtonA.setBackgroundResource(R.drawable.bg_toggle_selector);
+						break;
+
+				 case GREEN:
+						toggleButtonA.setBackgroundResource(R.drawable.bg_toggle_green);
+						break;
+			}
+
+	 }
+
+	 public void setBackgroundBType(@ButtonBgEnum int type) {
+			switch(type) {
+				 case BLUE:
+						toggleButtonB.setBackgroundResource(R.drawable.bg_toggle_selector);
+						break;
+
+				 case GREEN:
+						toggleButtonB.setBackgroundResource(R.drawable.bg_toggle_green);
+						break;
+			}
+
 	 }
 
 	 public synchronized Integer getValue() {
@@ -267,6 +316,14 @@ public class ToggleButton extends LinearLayoutCompat {
 			int BUTTON_A = 1;
 			int BUTTON_B = 0;
 			int BUTTON_NON = -1;
+	 }
+
+	 @Retention(RetentionPolicy.SOURCE)
+	 @Documented
+	 @IntDef({BLUE, ButtonBgEnum.GREEN})
+	 public @interface ButtonBgEnum {
+			int BLUE = 1;
+			int GREEN = 2;
 	 }
 
 	 public interface OnCheckedChangeListener {

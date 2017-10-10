@@ -54,11 +54,13 @@
         <com.mojtaba_shafaei.android.toggleButton.ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             app:tb_A_text="دکمه A"
             app:tb_B_text="دکمه B"
             app:tb_default_button="A"
+            app:tb_background_A_type="blue"
+            app:tb_background_B_type="green"
             app:tb_isMandatory="true"
-            android:layout_gravity="start"
             app:tb_layoutDirection="rtl"
             app:tb_title="عنوان"
             app:tb_titleTextColor="@color/colorPrimaryDark"
@@ -72,8 +74,8 @@
             app:tb_A_text="'A' Button"
             app:tb_B_text="'B' Button"
             app:tb_isMandatory="true"
-            app:tb_title="سلام"
             app:tb_layoutDirection="ltr"
+            app:tb_title="سلام"
             app:tb_titleTextSize="@dimen/titleTextSize" />
 
         <com.mojtaba_shafaei.android.toggleButton.ToggleButton
