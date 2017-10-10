@@ -144,19 +144,17 @@ public class ToggleButton extends LinearLayoutCompat {
 
 				 if(attrs == null){
 						isMandatory = true;
-						toggleButtonA.setChecked(true);
-						checkedChangeListener.onChecked(ButtonsEnum.BUTTON_A);
-
+						toggleButtonA.performClick();
 				 } else{
 						isMandatory = a.getBoolean(R.styleable.ToggleButton_tb_isMandatory, false);
 						value = a.getInteger(R.styleable.ToggleButton_tb_default_button, -1);
 						switch(value) {
 							 case 0:
-									toggleButtonB.setChecked(true);
+									toggleButtonB.performClick();
 									break;
 
 							 case 1:
-									toggleButtonA.setChecked(true);
+									toggleButtonA.performClick();
 									break;
 
 							 default:
