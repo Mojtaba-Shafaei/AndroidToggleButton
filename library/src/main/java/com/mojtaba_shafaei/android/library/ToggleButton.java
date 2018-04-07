@@ -291,26 +291,28 @@ public class ToggleButton extends LinearLayout {
     return value;
   }
 
+  public void setTitleVisibility(int visibility) {
+    this.title.setVisibility(visibility);
+  }
+
   public void setTitle(String title) {
-    if (isMandatory) {
-      this.title.setText(title + " *");
-    } else {
-      this.title.setText(title);
-    }
+    setTitle(title, null);
   }
 
   public void setTitle(String title, Typeface typeface) {
-    this.title.setTypeface(typeface);
+    if (typeface != null) {
+      this.title.setTypeface(typeface);
+    }
 
     if (isMandatory) {
-      this.title.setText(title + " *");
+      this.title.setText(title + ' ' + '*');
     } else {
       this.title.setText(title);
     }
   }
 
   public void setTitle(@StringRes int titleResId) {
-    setTitle(getContext().getString(titleResId));
+    setTitle(getContext().getString(titleResId), null);
   }
 
   /**
