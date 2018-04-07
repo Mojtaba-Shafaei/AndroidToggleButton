@@ -68,7 +68,7 @@
 
     <com.mojtaba_shafaei.android.library.ToggleButton
       android:id="@+id/tb3"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="40dp"
       app:tb_A_text="'A' Button"
@@ -80,7 +80,7 @@
 
     <com.mojtaba_shafaei.android.library.ToggleButton
       android:id="@+id/tb4"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="40dp"
       app:tb_A_text="'A' Button"
