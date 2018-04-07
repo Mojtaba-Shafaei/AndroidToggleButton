@@ -44,7 +44,6 @@
                 android:layout_height="36dp"
                 android:layout_weight=".5"
                 android:background="@drawable/bg_toggle_selector"
-                android:drawableRight="@drawable/ic_cloud_circle_black_24dp"
                 android:gravity="center"
                 android:minWidth="88dp"
                 android:paddingEnd="@dimen/toggle_button_padding_lr"

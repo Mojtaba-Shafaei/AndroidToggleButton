@@ -64,18 +64,18 @@ public class ToggleButton extends LinearLayout {
                 toggleButtonA.setChecked(false);
                 toggleButtonB.setChecked(false);
 
-                setWeight(.5F, .5F);
+                // setWeight(.5F, .5F);
 
             } else if (value == 1) {
                 toggleButtonA.setChecked(true);
                 toggleButtonB.setChecked(false);
 
-                setWeight(.6F, .4F);
+                // setWeight(.6F, .4F);
             } else if (value == 0) {
                 toggleButtonA.setChecked(false);
                 toggleButtonB.setChecked(true);
 
-                setWeight(.4F, .6F);
+                // setWeight(.4F, .6F);
             }
             toggleButtonA.requestLayout();
             toggleButtonB.requestLayout();
@@ -207,14 +207,10 @@ public class ToggleButton extends LinearLayout {
                 title.setTextColor(titleColor);
 
                 String tba = a.getString(R.styleable.ToggleButton_tb_A_text);
-                this.toggleButtonA.setTextOff(tba);
-                this.toggleButtonA.setTextOn(tba);
-                this.toggleButtonA.setText(tba);
+                setButtonAText(tba);
 
                 String tbb = a.getString(R.styleable.ToggleButton_tb_B_text);
-                this.toggleButtonB.setTextOff(tbb);
-                this.toggleButtonB.setTextOn(tbb);
-                this.toggleButtonB.setText(tbb);
+                setButtonBText(tbb);
 
                 if (a.hasValue(R.styleable.ToggleButton_tb_background_A)) {
                     int buttonABackgroundResId = a.getResourceId(R.styleable.ToggleButton_tb_background_A,
@@ -382,6 +378,8 @@ public class ToggleButton extends LinearLayout {
      */
     public void setButtonAText(String text, ColorStateList textColor, Typeface typeface) {
         if (text != null) {
+            this.toggleButtonA.setTextOff(text);
+            this.toggleButtonA.setTextOn(text);
             this.toggleButtonA.setText(text);
         }
         if (textColor != null) {
@@ -391,6 +389,20 @@ public class ToggleButton extends LinearLayout {
         if (typeface != null) {
             this.toggleButtonA.setTypeface(typeface);
         }
+    }
+
+    /**
+     * @param size float, textSize as dip
+     */
+    public void setButtonATextSize(float size) {
+        this.toggleButtonA.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size);
+    }
+
+    /**
+     * @param size float, textSize as dip
+     */
+    public void setButtonBTextSize(float size) {
+        this.toggleButtonA.setTextSize(TypedValue.COMPLEX_UNIT_DIP, size);
     }
 
     public void setButtonACompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom) {
@@ -423,6 +435,8 @@ public class ToggleButton extends LinearLayout {
 
     public void setButtonBText(String text, ColorStateList textColor, Typeface typeface) {
         if (text != null) {
+            this.toggleButtonB.setTextOff(text);
+            this.toggleButtonB.setTextOn(text);
             this.toggleButtonB.setText(text);
         }
         if (textColor != null) {

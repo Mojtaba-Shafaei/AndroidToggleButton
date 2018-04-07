@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final ToggleButton toggle = findViewById(R.id.toggle);
+        toggle.setButtonAText("تجربه کاری");
+        toggle.setButtonBText("رشته تحصیلی");
         toggle.setOnCheckedChangeListener(new ToggleButton.OnCheckedChangeListener() {
             @Override
             public void onChecked(int button) {
@@ -58,12 +60,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Drawable drawable = ContextCompat.getDrawable(this, R.drawable.bgs_button);
-        toggle.setButtonACompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+        Drawable drawable2 = ContextCompat.getDrawable(this, R.drawable.bgs_button);
+       // toggle.setButtonACompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+       // toggle.setButtonBCompoundDrawablesWithIntrinsicBounds(drawable2, null, null, null);
 
         findViewById(R.id.btn_test_val).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("TAG", "onClick: " + toggle.getValue());
+
             }
         });
     }
